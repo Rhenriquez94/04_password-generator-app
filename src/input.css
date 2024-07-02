@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    background-color: #111016;
+}
+section{
+    background-color: #111016;
+}
+
+
+.custom-checkbox {
+	cursor: pointer;
+    background-color: rgb(36, 35, 43);
+    width: 14px;
+    height: 14px;
+    appearance: none;
+    border: 1px solid #dddcdf;
+  }
+  
+  .custom-checkbox:checked {
+	background-color: #aff6ba;
+	background-image: url('../assets/images/icon-check.svg');
+	background-size: cover; 
+  	background-position: center; 
+
+}
+
+
+
+.level-cero{
+	height: 26px;
+	width: 12px;
+	border: 1px solid white;
+	
+}
+
+.level-medium{
+	height: 26px;
+	width: 12px;
+	border: 1px solid white;
+	background-color: #f8cf67;
+}
+
+.level-tooweak{
+	height: 26px;
+	width: 12px;
+	border: 1px solid white;
+	background-color: #f64a4a;
+}
+
+.level-weak{
+	height: 26px;
+	width: 12px;
+	border: 1px solid white;
+	background-color: #fb7c58;
+}
+
+.level-strong{
+	height: 26px;
+	width: 12px;
+	border: 1px solid white;
+	background-color: #a4ffaf;
+}
+
+
+
+
+
+
+
+
+
+input[type="range"] {
+	font-size: 1.5rem;
+    height: 10px;
+}
+
+input[type="range"] {
+	color: #cfb9bb;
+	--thumb-height: 1.125em;
+	--track-height: 0.125em;
+	--track-color: rgba(0, 0, 0, 0.2);
+	--brightness-down: 80%;
+	--clip-edges: 0.125em;
+}
+
+input[type="range"].win10-thumb {
+	color: #0d1ed1;
+
+	--thumb-height: 1.375em;
+	--thumb-width: 0.5em;
+	--clip-edges: 0.0125em;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: #000;
+	}
+
+	html::before {
+		background: radial-gradient(circle at center, #101112, #000);
+	}
+
+	input[type="range"] {
+		color: #aff6ba;
+		--track-color: rgba(27, 26, 34);
+	}
+
+	input[type="range"].win10-thumb {
+		color: #3a86ff;
+	}
+}
+
+/* === range commons === */
+input[type="range"] {
+	position: relative;
+	background: #fff0;
+	overflow: hidden;
+}
+
+input[type="range"]:active {
+	cursor: grabbing;
+}
+
+input[type="range"]:disabled {
+	filter: grayscale(1);
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+/* === WebKit specific styles === */
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	transition: all ease 100ms;
+	height: var(--thumb-height);
+}
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	--thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+	--clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+	--clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+	--clip-further: calc(100% + 1px);
+	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+		100vmax currentColor;
+
+	width: var(--thumb-width, var(--thumb-height));
+	background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
+		50% calc(var(--track-height) + 1px);
+	background-color: currentColor;
+	box-shadow: var(--box-fill);
+	border-radius: var(--thumb-width, var(--thumb-height));
+
+	filter: brightness(100%);
+	clip-path: polygon(
+		100% -1px,
+		var(--clip-edges) -1px,
+		0 var(--clip-top),
+		-100vmax var(--clip-top),
+		-100vmax var(--clip-bottom),
+		0 var(--clip-bottom),
+		var(--clip-edges) 100%,
+		var(--clip-further) var(--clip-further)
+	);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-hover));
+	cursor: grab;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-down));
+	cursor: grabbing;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
+		100% calc(var(--track-height) + 1px);
+}
+
+input[type="range"]:disabled::-webkit-slider-thumb {
+	cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) {
+         
+    input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+       
+    appearance: none;
+        height: 20px;
+        cursor: pointer;;
+        background: #e7e7e9;
+        box-shadow: -405px 0 0 400px #a5ffb2;
+        border-radius: 50%;
+        
+    }
+} */
+
+
+
